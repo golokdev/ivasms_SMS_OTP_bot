@@ -181,12 +181,16 @@ def get_fresh_cookies():
     print("🚀 Launching invisible Browser to get fresh Cookies...")
     driver = None
     try:
-        driver = Driver(uc=True, headless=False)
+        from selenium.webdriver.chrome.options import Options
+        options = Options()
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--window-size=1280,720")
+        
+        driver = Driver(uc=True, headless=True, options=options)
         driver.set_page_load_timeout(45)
-        driver.driver.options.add_argument("--disable-gpu")
-        driver.driver.options.add_argument("--no-sandbox")
-        driver.driver.options.add_argument("--disable-dev-shm-usage")
-        driver.driver.options.add_argument("--window-size=1280,720")
+
         
         print("🔐 Navigating to iVASMS login...")
         try: driver.get("https://www.ivasms.com/login")
