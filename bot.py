@@ -171,6 +171,10 @@ def get_fresh_cookies():
     try:
         driver = Driver(uc=True, headless=False)
         driver.set_page_load_timeout(45)
+        driver.driver.options.add_argument("--disable-gpu")
+        driver.driver.options.add_argument("--no-sandbox")
+        driver.driver.options.add_argument("--disable-dev-shm-usage")
+        driver.driver.options.add_argument("--window-size=1280,720")
         
         print("🔐 Navigating to iVASMS login...")
         try: driver.get("https://www.ivasms.com/login")
