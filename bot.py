@@ -22,8 +22,8 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 EMAIL = os.getenv("EMAIL")
 PASSWORD = os.getenv("PASSWORD")
 
-GROUP_ID = "-1003949942852"
-USER_BOT_USERNAME = "YourOTPBot"
+GROUP_ID = "-1003800605479"
+USER_BOT_USERNAME = "golok_otp_bot"
 
 API_URL = "https://www.ivasms.com/portal/sms/test/sms?draw=1&columns%5B0%5D%5Bdata%5D=range&columns%5B0%5D%5Borderable%5D=false&columns%5B1%5D%5Bdata%5D=termination.test_number&columns%5B1%5D%5Bsearchable%5D=false&columns%5B1%5D%5Borderable%5D=false&columns%5B2%5D%5Bdata%5D=originator&columns%5B2%5D%5Borderable%5D=false&columns%5B3%5D%5Bdata%5D=messagedata&columns%5B3%5D%5Borderable%5D=false&columns%5B4%5D%5Bdata%5D=senttime&columns%5B4%5D%5Bsearchable%5D=false&columns%5B4%5D%5Borderable%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=25&search%5Bvalue%5D=&_=1778741963472"
 
