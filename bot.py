@@ -10,6 +10,18 @@ import cloudscraper
 import logging
 import traceback
 from seleniumbase import Driver
+from flask import Flask
+from threading import Thread
+
+app = Flask(__name__)
+@app.route('/')
+def home(): return "OK"
+
+def run_flask():
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
+
+Thread(target=run_flask, daemon=True).start()
+
 
 # টেলিগ্রামের ফালতু এরর লগ বন্ধ করা হলো
 telebot.logger.setLevel(logging.ERROR)
