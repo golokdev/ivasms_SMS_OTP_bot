@@ -181,14 +181,14 @@ def get_fresh_cookies():
     print("🚀 Launching invisible Browser to get fresh Cookies...")
     driver = None
     try:
-        from selenium.webdriver.chrome.options import Options
-        options = Options()
-        options.add_argument("--disable-gpu")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--window-size=1280,720")
-        
-        driver = Driver(uc=True, headless=True, options=options)
+        driver = Driver(
+            uc=True, 
+            headless=True,
+            disable_gpu=True,
+            no_sandbox=True,
+            disable_dev_shm_usage=True,
+            browser="chrome"
+        )
         driver.set_page_load_timeout(45)
 
         
